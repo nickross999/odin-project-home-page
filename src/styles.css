@@ -108,6 +108,11 @@ main {
   min-height: 350px;
   background-color: white;
   box-shadow: gray 1px 1px 5px;
+  transition: transform 0.2s linear;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
 }
 
 .project-image {
@@ -123,19 +128,24 @@ main {
 footer {
   flex-grow: 1;
   max-height: 350px;
+  max-width: 100%;
   width: 100%;
   background-color: var(--blue);
   color: white;
   position: relative;
-  padding: 0px 0px 10px 20px;
   font-size: 16px;
 }
 
 .self-photo-2 {
-  max-height: 270px;
+  max-width: 350px;
   position: absolute;
   right: 10%;
-  top: 40px;
+  top: 50px;
+}
+
+.contact-info {
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .info {
@@ -165,5 +175,49 @@ footer {
   height: 32px;
 }
 
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.no-hover:hover {
+  transform: none;
+}
+
 @media screen and (max-width: 1000px) {
+  .projects {
+    grid-template-columns: repeat(2, 300px);
+  }
+
+  .self-photo-2 {
+    max-width: 250px;
+    top: 150px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    padding-bottom: 10px;
+  }
+
+  .self-photo-2 {
+    position: static;
+    max-width: none;
+    width: 100vw;
+    margin-top: 5px;
+    margin-left: -20px;
+  }
+
+  .projects-heading {
+    width: fit-content;
+    margin-right: auto;
+  }
+
+  .projects {
+    grid-template-columns: 300px;
+  }
 }
